@@ -17,6 +17,7 @@ public class SaudacaoController {
 	@Autowired
 	private SaudacaoConfig saudacaoConfig;
 	
+
 	@GetMapping({"","/", "{nomePath}"})
 	public ResponseEntity<String> getSaudacao(
 			@RequestParam(required = false) String nome,
@@ -27,5 +28,4 @@ public class SaudacaoController {
 		return ResponseEntity.ok(
 				String.format(template, saudacaoConfig.getSaudacao(), nome));
 	}
-}}
 }
